@@ -1,0 +1,11 @@
+# ONGHelp — fotos de notícias
+# Esta pasta só deve servir imagens recodificadas pelo pipeline.
+# Nenhum script pode ser listado ou executado aqui.
+Options -Indexes
+
+<FilesMatch "(?i)\.(php|phtml|phar|php[0-9]?|cgi|pl|py|sh|asp|aspx|jsp)$">
+    Require all denied
+</FilesMatch>
+
+RemoveHandler .php .phtml .phar .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .sh
+RemoveType .php .phtml .phar .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .sh

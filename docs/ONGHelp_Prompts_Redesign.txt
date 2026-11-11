@@ -1,0 +1,367 @@
+ONGHELP — PROMPTS DE REDESIGN (para o opencode)
+================================================================================
+
+COMO USAR
+- Rode o PROMPT 0 primeiro (sistema base: fundo, vidro, tipografia, componentes).
+- Depois rode os demais, um por vez, em qualquer ordem (Prompts 1 a 9).
+- Cada prompt começa em "PROMPT N" e termina na linha "ENTREGA".
+- Paleta de cores: NÃO muda. Estilo: glassmorphism. Perfis no estilo de rede social.
+
+ÍNDICE
+0 Sistema base
+1 Home (index.php)
+2 ONGs (pages/ongs.php)
+3 Transparência (pages/transparencia.php + relatório da ONG)
+4 Gestão financeira (pages/gestao.php)
+5 Perfil público da ONG (pages/perfilpublico.php)
+6 Perfil privado / gerenciamento de perfil (pages/perfilprivado.php)
+7 Login (pages/login.php)
+8 Cadastro (pages/cadastro.php)
+9 Admin (admin/)
+
+
+================================================================================
+PROMPT 0 — SISTEMA BASE (rodar primeiro)
+================================================================================
+
+Papel: você é web designer + UX. Vou dar especificações visuais exatas; implemente fielmente. Este prompt cria o sistema visual compartilhado por TODAS as páginas do ONGHelp (PHP puro, Bootstrap 5.3.3 CDN, CSS em assets/css/global.css, JS em assets/js/). Leia includes/header.php, includes/footer.php e global.css antes de começar.
+
+Regras: não alterar lógica PHP, SQL, rotas, CSRF, nem ids/names/data-* usados por JS e backend. CSS só em global.css, JS só em assets/js/. Apague CSS que ficar morto. Sem dependências novas.
+
+NÃO MUDAR: a paleta (reutilize as variáveis de cor que já existem em global.css: Depth, Harbor, Marine, Glacier, Frost, verde de receita, vermelho de despesa e as cores de cada causa), a navbar, o logo, o footer, a ilustração do hero e os textos do site.
+
+1. FUNDO DE TODAS AS PÁGINAS
+Base Frost. Sobre ela, três manchas de luz desfocadas e FIXAS (não rolam, sem animação): (a) Glacier a ~45%, círculo de ~560px, canto superior esquerdo, metade fora da tela; (b) Marine a ~28%, ~640px, lado direito, a meia altura; (c) Glacier a ~30%, ~480px, canto inferior esquerdo. Desfoque de ~90px. São elas que dão o que "borrar" ao vidro. No admin, as manchas ficam 50% mais fracas.
+
+2. VIDRO (glassmorphism), três níveis
+- Vidro 1 (painéis, tabelas, barras de filtro, faixas de KPI): fundo branco 58%, desfoque 18px, saturação 140%, borda 1px branca a 70%, sombra 0 8px 32px Harbor a 10%, raio 20px, padding 24px (32px em painéis grandes).
+- Vidro 2 (drawer, modal, dropdown, toast, barra flutuante): branco 80%, desfoque 28px, borda 1px branca a 80%, sombra 0 24px 64px Depth a 22%, raio 24px.
+- Vidro escuro (faixas de CTA): Harbor a 60% com brilho branco 6%, desfoque 20px, borda 1px branca a 14%, texto branco.
+Regras: nunca vidro dentro de vidro (dentro de um painel use fundo Frost a 50% ou filete de 1px Harbor a 10%); linhas de tabela e itens de lista são planos, sem desfoque; texto sobre vidro é sempre Depth/Harbor com contraste AA (se precisar, aumente a opacidade do vidro); sem suporte a desfoque no navegador, o vidro vira branco 92% opaco; vidro clicável sobe 2px no hover, com sombra mais forte (180ms); respeitar prefers-reduced-motion.
+
+3. TIPOGRAFIA
+Poppins em todo o site (login e cadastro hoje usam outra fonte: unificar). Escala: título de página 40/48 peso 700; título de seção 28/36 peso 600; título de painel 20/28 peso 600; corpo 16/26; secundário 14/22; rótulo 12/16 em caixa-alta, espaçamento 0.06em, peso 600, cor Marine. Nada abaixo de 13px, exceto os rótulos. Valores de dinheiro e colunas numéricas: algarismos tabulares, alinhados à direita (se Poppins não tiver, usar Inter só nesses números). Zero em tabelas aparece como "—" em cor atenuada.
+
+4. COMPONENTES (um estilo por conceito, idêntico em todas as páginas)
+- Cabeçalho de página: sem faixa colorida e sem gradiente. Esquerda: título + subtítulo (cor Harbor a 75%). Direita: ações. 40px de espaço acima, 24px abaixo.
+- Botões (pílula, 44px de altura, texto 15px/600): primário Marine com texto branco (hover Harbor); secundário em vidro 1 com borda Marine a 40% e texto Marine; terciário só texto com seta →. No máximo UM primário por área visível. Botão só de ícone: 40×40 redondo com aria-label.
+- Campos: 46px de altura, raio 12px, fundo branco 70%, borda Marine a 25%; foco: borda Marine + anel Glacier de 3px. Label acima (14px/600), ajuda abaixo (13px), erro abaixo em vermelho com ícone. Interruptores (switch) no lugar de checkbox para opções liga/desliga.
+- Chip de causa (manter o comportamento atual): pílula de 36px, bolinha de 8px na cor da causa + nome; ativo: fundo Marine, texto branco, bolinha branca.
+- Selo verificado: pílula com check + "Verificada em dd/mm/aaaa", fundo Marine a 10%, texto e ícone Marine, 13px/600. Substitui o selo verde em todo o site (verde fica só para receita e sucesso).
+- Avatar de ONG: círculo com anel de 2px na cor da causa e 2px de respiro branco. Tamanhos: 32, 44, 64, 128.
+- Cor da causa aparece SOMENTE como bolinha, anel de avatar e barra lateral de 3px em hover/seleção. Nunca como fundo de bloco.
+- Tabela de dados: dentro de vidro 1; cabeçalho em rótulo 12px; linhas de 64px separadas por filete de 1px Harbor a 8%; hover branco a 55%; valores à direita; cabeçalho fixo ao rolar dentro do painel.
+- Item de feed (movimentação): ícone circular de 36px (seta para baixo verde = receita; seta para cima vermelha = despesa), descrição 15px/500, data 13px abaixo, valor à direita 15px/600 com sinal e cor.
+- Faixa de KPIs: UM painel de vidro 1 horizontal com 3 a 4 números separados por divisores verticais de 1px; número 32px/700, rótulo 13px abaixo. Nunca caixas separadas.
+- Controle segmentado: trilho pílula de 44px em vidro 1, opção ativa em Marine com texto branco.
+- Drawer: entra pela direita, vidro 2, fundo da página escurecido (Depth a 35% + desfoque 4px), fecha com Esc e clique fora, cabeçalho e rodapé de ações fixos.
+- Modal: vidro 2 centralizado, máximo 560px.
+- Estado vazio: ícone de 48px em Marine a 40%, título 18px, texto 14px, um botão.
+- Toast: vidro 2, canto inferior direito, some em 4s.
+- Nota informativa: fundo Marine a 8%, filete esquerdo de 3px Marine, ícone "i", texto 14px. Nada de cor creme/amarela.
+
+5. LAYOUT
+Container de 1200px, margens laterais 24px (16px no mobile). 48px entre seções. Grade de 12 colunas, gap 24px. Breakpoints: ≥1024 desktop, 640–1023 tablet, <640 mobile. Alvos de toque ≥44px.
+
+ENTREGA: mostre o diff, os arquivos alterados e uma lista curta do que NÃO mudou por ser lógica/conteúdo (inclusive links mortos do footer, para eu decidir).
+
+
+================================================================================
+PROMPT 1 — HOME (index.php)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Faça só o que está abaixo; não toque em navbar e footer. Não altere lógica PHP nem textos.
+
+HERO (altura ~640px no desktop, grade de 12 colunas)
+- Coluna esquerda (colunas 1–6), alinhada verticalmente ao centro:
+  1. Rótulo "PLATAFORMA GRATUITA PARA ONGS BRASILEIRAS" no estilo de rótulo (12px caixa-alta Marine) com um filete horizontal de 32px à esquerda. Sem pílula, sem fundo.
+  2. Título 56/60, peso 700, em três linhas: "Transparência e gestão" / "para ONGs que" / "transformam o Brasil". As duas primeiras em Harbor; "transformam o Brasil" em Marine, SEM itálico, com uma marca de texto translúcida Glacier a 40% (10px de altura) atrás de "o Brasil".
+  3. Parágrafo atual em 18/30, largura máxima 480px, Harbor a 80%.
+  4. Botões lado a lado: primário "Cadastrar gratuitamente" e terciário "Ver ONGs →" (sai o botão de contorno).
+  5. Duas garantias ("Sem taxa de adesão", "Dados seguros (LGPD)") em linha, 14px, com ícone de check em Marine (não verde).
+- Coluna direita (colunas 7–12): a ilustração permanece EXATAMENTE onde está, mesmo tamanho. Sobre ela, dois mini-painéis de vidro 1 (≈220×72px, raio 16px) sobrepostos às bordas da imagem, 24px para fora: (A) canto superior esquerdo: círculo de 40px Marine a 12% com ícone de escudo-check Marine + "Cadastro verificado" (14px/600) + "pela Equipe ONGHelp" (13px); (B) canto inferior direito: círculo com ícone de QR + "Doação direta via PIX" + "sem intermediação". Flutuação vertical suave de ±6px, ciclo de 6s, defasada entre os dois; desligada com prefers-reduced-motion. No mobile, mostrar só o painel A.
+
+FAIXA DE NÚMEROS
+Substitui a faixa azul cheia. É uma faixa de KPIs (vidro 1) com os 4 números atuais (ONGs cadastradas, Arrecadados, Movimentações registradas, Transparência pública), sobreposta à base do hero (metade para dentro, metade para fora), largura do container. No mobile: grade 2×2.
+
+"COMO FUNCIONA"
+- Cabeçalho alinhado à ESQUERDA (colunas 1–6), não centralizado: rótulo "COMO FUNCIONA", título "Tudo que sua ONG precisa em um só lugar", parágrafo atual.
+- Abaixo, grade "bento" de vidro 1 com 3 blocos:
+  • Perfil Público: colunas 1–7, ocupa 2 linhas (≈440px de altura). Dentro, abaixo do texto, uma miniatura decorativa de perfil feita de formas simples: capa em gradiente Glacier→Marine, círculo de avatar sobreposto e 3 linhas de texto cinza. aria-hidden.
+  • Transparência Total: colunas 8–12, linha 1. Miniatura: 6 barras verticais de alturas variadas em Marine e Glacier.
+  • Divulgação via PIX: colunas 8–12, linha 2. Miniatura: padrão simples de QR (grade 5×5 de quadrados Harbor).
+  Cada bloco: numeração "01/02/03" como rótulo, título 20/600, texto atual 15px. Sem ícones em quadradinho colorido. No mobile: empilhados.
+
+"ONGS EM DESTAQUE"
+- Mantém rótulo, título "Conheça quem está transformando o Brasil" e parágrafo, alinhados à esquerda; à direita, o link "Ver todas as ONGs →" (substitui o botão central).
+- Remover o carrossel e as fotos. No lugar, o ÍNDICE DE ONGs (mesmo componente do Prompt 2, sem barra de filtros), mostrando as mesmas ONGs que o carrossel mostra hoje, no máximo 6.
+
+CTA FINAL
+Painel de vidro escuro DENTRO do container (não de ponta a ponta), raio 28px, padding 56px. Esquerda: título "Sua ONG merece o melhor suporte!" 32/40 + parágrafo atual. Direita, centralizado verticalmente: botão claro (fundo branco, texto Harbor) "COMEÇAR AGORA". No mobile: empilhado.
+
+Estados e responsivo: no mobile o hero empilha (texto, depois ilustração); verifique foco visível em todos os links e botões.
+ENTREGA: diff + arquivos alterados.
+
+
+================================================================================
+PROMPT 2 — ONGs (pages/ongs.php)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Não altere lógica PHP/filtros/consultas nem textos, só marcação e visual.
+
+DIAGNÓSTICO: a grade de cards com banner colorido, destaque duplicado, 3 botões por card e 4 caixas de estatística é genérica e ineficiente para escanear e comparar. Substituir por um índice em linhas.
+
+1. CABEÇALHO DE PÁGINA (padrão do Prompt 0)
+Esquerda: título "Rede de organizações no Brasil" + subtítulo atual. Direita: linha de texto 14px "8 organizações · 1 estado · 7 causas" (usar os números já calculados; singular quando for 1). Remover as 4 caixas de estatística e o rótulo "Rede de organizações" em pílula. Sem faixa de gradiente atrás do título.
+
+2. BARRA DE FILTROS (vidro 1, altura 72px, fixa sob a navbar ao rolar)
+Da esquerda para a direita: campo de busca por nome com ícone de lupa (largura 320px), select Cidade, select Estado (esconder se só existir um estado), select Ordenar por, e à direita o contador "8 organizações". Mesmos filtros e comportamento de hoje.
+Logo abaixo (fora do painel, 16px de distância): linha horizontal rolável de chips de causa, mantendo o componente e o comportamento atuais, com o chip "Todas" primeiro.
+
+3. ÍNDICE (um único painel de vidro 1, sem padding lateral nas linhas)
+Cabeçalho do índice (rótulos 12px): ORGANIZAÇÃO · CAUSA · LOCAL · PROJETOS · ARRECADADO.
+Colunas (desktop): 38% / 16% / 16% / 10% / 14% / seta 6%.
+Cada linha (72px de altura, filete de 1px entre linhas, linha toda clicável levando ao perfil da ONG):
+- Organização: avatar de 44px (anel na cor da causa) + à direita o nome 16/600 com ícone de check Marine de 16px logo após (quando verificada) e, abaixo, a descrição em 1 linha, 13px, truncada com reticências.
+- Causa: bolinha de 8px na cor da causa + nome da causa 14px.
+- Local: "Ribeirão Preto · SP" 14px.
+- Projetos: número 14px/500.
+- Arrecadado: "R$ 29k" 15px/600, alinhado à direita, tabular.
+- Seta ">" Marine a 50%.
+Hover: fundo branco a 55%, barra lateral esquerda de 3px na cor da causa, seta Marine e deslocada 4px à direita. Foco por teclado: anel Glacier 3px dentro da linha.
+Sem botões "Ver perfil", "Doar via PIX" ou "Ver transparência" na listagem (continuam no perfil público). Remover o bloco "ONG em destaque".
+Mobile (<640px): linha em duas camadas; em cima avatar 40px + nome + check; embaixo "causa · cidade" 13px; valor "R$ 29k" à direita; esconder colunas Projetos e Local e o cabeçalho do índice.
+
+4. ESTADOS
+- Sem resultados: estado vazio centralizado no painel ("Nenhuma organização encontrada com esses filtros") + botão secundário "Limpar filtros".
+- Carregando/primeiro paint: não necessário (renderização no servidor).
+
+5. FECHAMENTO
+Faixa de vidro escuro dentro do container (raio 28px, padding 40px), com o texto atual "Sua ONG ainda não está aqui?" + parágrafo + botão claro "CADASTRAR MINHA ONG" à direita.
+
+ENTREGA: diff + arquivos alterados. Informe qualquer filtro que dependa de campo que a view não tenha.
+
+
+================================================================================
+PROMPT 3 — TRANSPARÊNCIA (pages/transparencia.php e relatório da ONG)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Não altere lógica PHP, consultas, exportações (CSV/PDF), links, ids/handlers do relatório nem textos. Só marcação e visual.
+
+DIAGNÓSTICO: a lista em cards repete a mesma estrutura 8 vezes e não permite comparar valores. Os dois avisos em caixas ocupam a dobra antes de qualquer dado. O relatório é um scroll único com 5 blocos e 6 botões. Reorganizar como portal de dados.
+
+1. CABEÇALHO
+Esquerda: título "Portal de Transparência das ONGs Cadastradas" (sem itálico colorido, sem pílula) + parágrafo atual. Direita: UMA faixa de KPIs de vidro 1 com os 4 números atuais (ONGs verificadas, com prestação de contas, arrecadados total, dados atualizados), em linha, divisores verticais. Sem 4 caixas.
+
+2. NOTA "COMO LER ESTES DADOS" (um único painel de vidro 1, padding 24px)
+Duas colunas com divisor vertical: esquerda "Como funciona o Portal de Transparência?" + texto atual; direita "O que significa o selo" + o texto atual do selo, com o selo de exemplo ao lado do título. Texto 14px, textos íntegros. No mobile: empilhado. Painel recolhível por um botão terciário "Ocultar/Mostrar", aberto por padrão.
+
+3. BARRA DE FILTROS (vidro 1, fixa sob a navbar ao rolar)
+Select Categoria, select Período (ano), busca por nome (320px) e, à direita, "8 ONGs encontradas".
+
+4. TABELA (painel de vidro 1; cabeçalho fixo ao rolar)
+Colunas: ORGANIZAÇÃO · CAUSA · RECEITAS · DESPESAS · SALDO · PROJETOS · (ação).
+- Organização: avatar 44px com anel de causa; nome 15/600; abaixo o selo verificado compacto (13px).
+- Causa: bolinha + nome 14px.
+- Receitas em verde, Despesas em vermelho, 15px/600, alinhadas à direita, tabulares, com "R$" e centavos como hoje. Saldo = receitas − despesas, com sinal (+/−) e cor conforme o sinal. Projetos: "2".
+- Ação: botão terciário "Relatório →".
+- Linhas de 64px, linha inteira clicável (abre o relatório). Hover: branco 55% + barra lateral de 3px na cor da causa.
+- Cabeçalhos clicáveis ordenam (client-side, sobre as linhas exibidas): primeiro clique crescente, segundo decrescente, setinha ao lado do rótulo; ordenação padrão por nome.
+- Linha final fixa (rodapé do painel): "Total das organizações listadas" com somas de Receitas, Despesas e Saldo, em 15px/700.
+- Os ícones "?" explicativos de Receitas/Despesas passam para tooltip no cabeçalho da coluna (uma vez), não repetidos em cada linha.
+- Fim da tabela: linha tracejada "Sua ONG ainda não está aqui? Cadastre-se e publique seus relatórios financeiros com transparência." + botão secundário "Cadastrar gratuitamente".
+- Mobile: cada ONG vira um bloco de duas camadas (nome + selo; embaixo três números em grade 3 colunas com rótulos Receitas/Despesas/Saldo). Sem cabeçalho de tabela.
+- Sem resultados: estado vazio com "Limpar filtros".
+
+5. RELATÓRIO DA ONG (substitui o modal atual por um DRAWER)
+Drawer à direita, 760px de largura (100% no mobile), vidro 2.
+- Cabeçalho fixo: avatar 64px, nome 24/700, selo verificado, "causa · cidade, UF", botão fechar (×). Abaixo, a descrição da ONG em 15px. SEM faixa verde.
+- Faixa de KPIs (3 números): Receitas do período, Despesas, Saldo do período (valor com sinal e cor, seta ↑/↓).
+- Abas (controle segmentado): Resumo · Balancete · Movimentações · Projetos.
+  • Resumo: gráfico de colunas de 12 meses (altura 220px): por mês, uma coluna verde (receitas) e uma vermelha (despesas), lado a lado, rótulo do mês embaixo, valor em tooltip no hover/foco; meses sem movimento ficam com colunas de 2px atenuadas. Linha-base fina.
+  • Balancete: tabela de 12 meses (Mês, Receitas, Despesas, Saldo do mês, Saldo acumulado), meses zerados atenuados, linha "Total do ano" em destaque, nota de rodapé atual sobre o saldo acumulado.
+  • Movimentações: feed (item de feed do Prompt 0) com as últimas movimentações.
+  • Projetos: blocos com número grande 36/700 em Marine, descrição do número e nome do projeto, em grade de 2 colunas.
+- Rodapé fixo: à esquerda botão primário "Doar via PIX" e secundário "Ver perfil público"; à direita um botão secundário "Exportar ▾" que abre um menu de vidro 2 com: Exportar CSV, Relatório anual (PDF) e o bloco "CSV do período" (Data inicial, Data final, botão). Abaixo, em 13px: "Dados declarados pela própria organização."
+- Esc e clique fora fecham; o foco fica preso no drawer enquanto aberto e volta à linha de origem ao fechar.
+
+ENTREGA: diff + arquivos alterados. Avise se alguma ordenação/aba exigir dado que a view não tem.
+
+
+================================================================================
+PROMPT 4 — GESTÃO FINANCEIRA (pages/gestao.php)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Não altere lógica PHP, validações, CSRF, nem names/actions dos formulários existentes; reutilize os mesmos campos e envios. Só marcação e visual (mais pequeno JS de interface).
+
+DIAGNÓSTICO: dois formulários grandes no topo empurram o dado importante (o livro-caixa) para baixo; não há resumo de saldo; o texto explicativo ocupa espaço fixo.
+
+1. CABEÇALHO
+Acima do título, rótulo "PAINEL DA VERDE VIDA" (nome da ONG logada) no estilo de rótulo. Título "Gestão Financeira e Projetos" + subtítulo atual. À direita: botão secundário "Ver no Portal de Transparência →".
+
+2. FAIXA DE KPIs (vidro 1)
+4 números: Receitas (verde), Despesas (vermelho), Saldo (cor pelo sinal), Projetos ativos. Valores já disponíveis na página (saldo = receitas − despesas).
+
+3. LAYOUT EM DUAS COLUNAS (≥1024px): livro-caixa nas colunas 1–8; projetos nas colunas 9–12. Mobile: empilhado, livro-caixa primeiro.
+
+4. LIVRO-CAIXA (painel de vidro 1)
+- Cabeçalho do painel: título "Movimentações recentes" + contador "(18)" + controle segmentado "Todas | Receitas | Despesas" (filtra as linhas exibidas, client-side).
+- LANÇAMENTO RÁPIDO fixo no topo do painel, em uma linha, fundo Frost a 50%, raio 16px, padding 12px: [segmentado Receita | Despesa] [Descrição, flexível] [Valor R$ 140px] [Data 150px] [botão primário "+ Cadastrar"]. É o formulário atual "Nova movimentação" no mesmo envio, só reposicionado. Ícone "?" ao lado do título abre tooltip com o texto atual ("Doações recebidas via PIX devem ser lançadas aqui como receita…"). No mobile o lançamento rápido vira um botão "+ Nova movimentação" que abre um modal com os mesmos campos.
+- Tabela abaixo: colunas Data · Descrição · Tipo · Valor · (ação). Tipo como selo suave (Receita verde, Despesa vermelha) com ícone; valor à direita com sinal e cor; ação = ícone de lixeira 40×40 (aria-label "Excluir movimentação"), cinza, vermelho no hover. Excluir abre confirmação em modal pequeno ("Excluir esta movimentação? Essa ação não pode ser desfeita."), mantendo o envio atual. Altura máxima 560px com rolagem interna e cabeçalho fixo. Resumo no rodapé do painel: "+ R$ 25.600,00 em receitas · − R$ 15.500,00 em despesas" (os valores atuais).
+- Data legível em "dd/mm/aaaa"; coluna Descrição quebra linha sem empurrar o valor (corrige o "+ R$ / 5.000,00" quebrado).
+
+5. PROJETOS ATIVOS (painel de vidro 1, coluna direita)
+- Cabeçalho: título "Projetos ativos" + botão primário pequeno "+ Novo projeto" que abre um MODAL (vidro 2) com o formulário atual (Nome do projeto, Número do resultado, Descrição do número, botão "Cadastrar projeto").
+- Lista: cada projeto em um bloco plano (sem vidro interno): número 32/700 Marine + descrição do número 14px; abaixo, nome do projeto 15/600; lixeira no canto superior direito com confirmação.
+- Estado vazio: "Você ainda não tem projetos" + botão "+ Novo projeto".
+
+Feedback: após salvar ou excluir, mostrar toast de sucesso/erro a partir das mensagens que a página já recebe.
+ENTREGA: diff + arquivos alterados.
+
+
+================================================================================
+PROMPT 5 — PERFIL PÚBLICO DA ONG (pages/perfilpublico.php)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Não altere lógica PHP nem consultas nem textos. Mantenha o tema por ONG (cor do banner e cor de cards/fundo escolhidas pela ONG) SOMENTE na capa e nos detalhes indicados. Referência de experiência: perfil de rede social.
+
+1. LINK DE VOLTA
+Acima de tudo, no container: terciário "← Voltar para ONGs" (sai o botão de contorno do card).
+
+2. CABEÇALHO DE PERFIL (um painel de vidro 1 sem padding, overflow oculto, raio 24px)
+- CAPA: 220px de altura (140px no mobile), largura total do painel, preenchida com gradiente da cor de banner da ONG (cor → mesma cor 18% mais escura, 135°) com dois círculos concêntricos decorativos a 10% de branco no canto direito.
+- AVATAR de 128px (96px no mobile), sobreposto à base da capa (metade dentro, metade fora), alinhado à esquerda com 32px de margem, anel branco de 4px e sombra leve.
+- Abaixo da capa, à direita do avatar, em duas colunas:
+  • Esquerda: nome 32/40 peso 700 seguido do selo verificado na mesma linha; abaixo "Assistência Social · Ribeirão Preto, SP · Membro desde 08/06/2026" em 14px com ícones pequenos (tag, pin, calendário).
+  • Direita (alinhado à direita, na altura do nome): botão primário "Doar via PIX" e botão secundário "Portal de Transparência".
+- Bio: a descrição da ONG, 16/26, largura máxima 680px, 20px abaixo.
+- Linha de números estilo contadores de rede social, SEM caixas, 24px abaixo da bio: quatro itens lado a lado (gap 32px): número 22/700 + rótulo 13px abaixo. Receitas (verde), Despesas (vermelho), Saldo (cor pelo sinal, com +/−), Projetos (neutro).
+- Nota 13px com ícone "i" abaixo: "Os dados institucionais e financeiros são autodeclarados pela ONG. O selo indica verificação cadastral, não auditoria financeira." (texto atual).
+- Padding interno da área de informações: 32px.
+
+3. ABAS (barra de vidro 1, 56px, fixa abaixo da navbar ao rolar)
+Abas de texto: "Visão geral" · "Projetos" · "Movimentações". Aba ativa: texto Harbor 600 e indicador de 3px na cor de banner da ONG abaixo; inativas em Harbor a 65%. Troca sem recarregar a página, com hash na URL (#projetos, #movimentacoes), navegável por teclado (setas), padrão "Visão geral".
+
+4. CORPO (≥1024px: conteúdo nas colunas 1–8, lateral nas 9–12 com posição "sticky" logo abaixo da barra de abas; mobile: lateral depois do conteúdo)
+Conteúdo principal por aba:
+- Visão geral: painel "Sobre" com a descrição completa; painel "Resultados em destaque" com até 2 projetos (número grande + descrição + nome); painel "Últimas movimentações" com as 5 mais recentes (feed) e link terciário "Ver todas →" que troca para a aba Movimentações.
+- Projetos: grade de 2 colunas; cada projeto é um bloco plano (fundo Frost a 50%, raio 16px, padding 24px) com número 40/700 na cor de banner da ONG, descrição do número 14px e nome do projeto 16/600.
+- Movimentações: feed completo das últimas movimentações exibidas hoje (10), com cabeçalho "Últimas movimentações" e a coluna de valor alinhada à direita.
+Lateral (sempre visível):
+- Painel "Dados institucionais": lista de rótulo (12px caixa-alta) e valor (15/500): CNPJ, E-mail de contato (link), Localização, Área de atuação, Canal público (link com ícone), Membro desde.
+- Painel "Doação via PIX": texto atual; a chave PIX em um campo somente leitura com botão "Copiar" (toast "Chave PIX copiada"); botão primário "Doar via PIX" (abre o QR como hoje).
+
+5. TEMA DA ONG (aplicação restrita)
+A cor de banner da ONG aparece APENAS na capa, no indicador da aba ativa e nos números dos projetos. A cor de cards/fundo da ONG (se definida) vira apenas o tom da mancha de luz de fundo da página. O resto segue o sistema.
+
+Estados: perfil sem projetos ("Esta organização ainda não cadastrou projetos") e sem movimentações, em estado vazio; avatar ausente → iniciais em círculo Marine a 15%.
+ENTREGA: diff + arquivos alterados.
+
+
+================================================================================
+PROMPT 6 — PERFIL PRIVADO / GERENCIAMENTO DE PERFIL (pages/perfilprivado.php)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Não altere lógica PHP, validações, CSRF, nem names/actions dos formulários existentes, uploads ou exportações. Só marcação, visual e JS de interface. Referência de experiência: tela de gerenciamento de perfil de rede social (cabeçalho do perfil + menu lateral de configurações).
+
+1. CABEÇALHO DE PERFIL (vidro 1, sem padding, raio 24px)
+- Capa de 160px com a cor de banner atual da ONG (mesmo gradiente do perfil público). Muda ao vivo quando a cor do tema é alterada na seção Aparência.
+- Avatar de 96px sobreposto à base da capa, anel branco 4px, com um botão circular de 32px (ícone de câmera) no canto inferior direito que leva à seção "Foto e aparência".
+- À direita do avatar: nome 28/36 700 + selo verificado; abaixo "Meio Ambiente · Membro desde 2026 · CNPJ 45.678.901/0001-23" 14px.
+- À direita (alinhado à direita): botão secundário "Ver perfil público" e terciário "Ver no Portal de Transparência →".
+- Linha de contadores sem caixas: Projetos ativos · Movimentações · Total arrecadado (números 22/700, rótulo 13px).
+
+2. ÁREA DE CONFIGURAÇÕES (abaixo, grade: menu lateral nas colunas 1–3, conteúdo nas 4–12)
+Menu lateral: painel de vidro 1, "sticky", itens de 48px com ícone: Visão geral · Relatório anual · Editar perfil · Foto e aparência · Verificação e PIX · Segurança · Conta (texto vermelho). Item ativo: pílula Marine com texto branco. Mostra uma seção por vez no painel de conteúdo (vidro 1, padding 32px), com hash na URL e persistência ao recarregar; padrão "Visão geral". Mobile: o menu vira uma barra horizontal rolável de abas logo abaixo do cabeçalho.
+
+3. SEÇÕES
+- Visão geral: faixa de KPIs (Projetos ativos, Movimentações, Total arrecadado) e as notas atuais.
+- Relatório anual: cabeçalho com título, descrição atual e select de Ano à direita. Três KPIs em faixa (Receitas verde, Despesas vermelho, Saldo acumulado do ano, sem os fundos coloridos). Tabela "Comparativo com 2025" (Indicador, 2026, 2025, Diferença, Variação) e tabela "Balancete mensal" no padrão de tabela de dados, com linha de total em destaque. Rodapé: botões secundários "Baixar PDF" e "Baixar CSV" (ícones, sem contorno vermelho/verde) e a nota atual.
+- Editar perfil: formulário atual em duas colunas, agrupado por subtítulos 16/600: "Identidade" (Nome da organização *, Descrição / Missão), "Contato e canal" (E-mail *, Área de atuação *, Canal público + endereço), "Localização" (Cidade, Estado), "Dados bloqueados" (CNPJ e chave PIX em campos desabilitados com ícone de cadeado e a nota atual explicando que só a Equipe ONGHelp altera). Obrigatórios marcados com *. BARRA FLUTUANTE: quando qualquer campo é alterado, surge no centro da base da viewport uma barra de vidro 2 (largura 560px, raio 999px) com "Você tem alterações não salvas" + terciário "Descartar" + primário "Salvar alterações"; some quando não há alterações. Sai o par de botões fixo no fim do formulário.
+- Foto e aparência: duas colunas. Esquerda "Foto de perfil": avatar de 128px, botão secundário "Escolher imagem" (mostra o nome do arquivo escolhido), botão primário "Enviar foto" desabilitado até haver arquivo, ajuda "JPG, PNG ou WebP, até 2 MB". Direita "Tema do perfil": PRÉVIA ao vivo (miniatura do cabeçalho do perfil público, 100% da coluna, com a capa na cor escolhida); "Cor do banner": 8 amostras redondas de 32px (a selecionada tem anel externo e check branco) + campo de cor personalizado; "Cor dos cards e fundo": 8 amostras claras; interruptor "Usar fundo padrão"; botão primário "Salvar tema".
+- Verificação e PIX: linha do tempo vertical de 3 etapas (Cadastro enviado → Em análise → Aprovada em 09/06/2026), a etapa atual em destaque Marine; selo verificado; texto atual sobre o selo não ser auditoria; campos "Cadastro aprovado" e "Chave PIX (CNPJ)" como lista de rótulo/valor; nota informativa sobre o QR Code (texto atual).
+- Segurança: campos "Nova senha" e "Confirmar nova senha" com olho de mostrar/ocultar, texto "Deixe os campos em branco para manter a senha atual." e botão secundário "Atualizar senha".
+- Conta: painel com borda vermelha a 25% e fundo vermelho a 5% (único lugar com tom vermelho de fundo), texto atual do "Encerramento da conta" e botão de contorno vermelho "Solicitar exclusão". Ao clicar: modal de vidro 2 repetindo o aviso de que a ação é irreversível, pedindo para digitar o nome da ONG, com o botão vermelho "Solicitar exclusão" habilitado só quando o nome confere, e terciário "Cancelar".
+
+Feedback: toasts para salvar/erro a partir das mensagens atuais. Mobile: seções em uma coluna, barra flutuante com largura 100% menos 32px.
+ENTREGA: diff + arquivos alterados. Avise se a prévia ao vivo do tema depender de algo que hoje não existe.
+
+
+================================================================================
+PROMPT 7 — LOGIN (pages/login.php)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Não altere lógica de autenticação, CSRF, names nem textos. Esta página não usa navbar/footer.
+
+LAYOUT: tela dividida 50/50 em ≥1024px, altura 100vh.
+- LADO ESQUERDO (gradiente vertical Harbor→Marine existente): remover os círculos decorativos. Logo no topo à esquerda (margem 48px). Centralizado verticalmente: título "Gestão e transparência para quem transforma o Brasil" 40/48 branco 700; parágrafo atual 16/26 branco a 80%; abaixo, UM painel de vidro escuro com a lista dos 4 benefícios (Perfil público após aprovação, Portal de transparência financeira, Divulgação de doações via PIX, Dashboard de gestão de projetos), cada um com ícone de check dentro de círculo de 28px branco a 14%, texto 15px branco. Rodapé: "© 2026 ONGHelp — Projeto Acadêmico de Engenharia de Software" 13px branco a 60%.
+- LADO DIREITO: fundo Frost com as manchas de luz do sistema. No canto superior direito, terciário "← Voltar ao site". No centro (vertical e horizontal), um painel de vidro 1 de 440px de largura, padding 40px:
+  1. Controle segmentado "Entrar | Criar conta" (Entrar ativo; "Criar conta" leva à página de cadastro).
+  2. Título "Bem-vindo de volta!" 28/36 700 + subtítulo atual 15px (24px de espaço antes do formulário).
+  3. Campos E-mail e Senha (Senha com olho de mostrar/ocultar), espaçamento de 20px entre campos, labels acima.
+  4. Botão primário de largura total "Entrar na plataforma" (48px).
+  5. Texto centralizado 14px: "Ainda não tem conta? Cadastre sua ONG gratuitamente" com o trecho final como link Marine/600.
+- Erro de login: nota informativa em tom vermelho (fundo vermelho a 8%, filete esquerdo de 3px vermelho, ícone) acima dos campos; os campos ficam com borda vermelha e o foco vai para o primeiro.
+- Estado de envio: botão com spinner e desabilitado durante o envio.
+- Tipografia: Poppins (hoje esta página usa outra fonte).
+
+MOBILE (<1024px): esconder o lado esquerdo; mostrar o logo (Marine) acima do painel; painel com margens de 16px e padding 24px; fundo com as manchas de luz.
+ENTREGA: diff + arquivos alterados.
+
+
+================================================================================
+PROMPT 8 — CADASTRO (pages/cadastro.php)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Mesmo casco do login (Prompt 7: lado esquerdo e fundo do lado direito idênticos). Não altere lógica, validações do servidor, CSRF, names dos campos, nem o envio; o formulário continua sendo UM único formulário enviado ao final. Não altere textos.
+
+DIAGNÓSTICO: 13 campos num scroll único, labels longos que quebram ("Responsável legal / dirigente máximo") e desalinham campos lado a lado, fonte diferente do resto do site. Transformar em formulário de 3 etapas.
+
+PAINEL (vidro 1, 560px de largura, padding 40px, centralizado no lado direito; altura cresce conforme a etapa, a página rola se necessário)
+1. Controle segmentado "Entrar | Criar conta" ("Criar conta" ativo).
+2. Título "Cadastre sua ONG!" 28/36 700 + subtítulo atual.
+3. INDICADOR DE ETAPAS: 3 círculos de 32px ligados por linha de 2px: "1 Conta", "2 Organização", "3 Canal e confirmação". Atual: preenchido Marine com número branco; concluída: Marine com check; futura: vidro 1 com borda Marine a 25%. Rótulos 13px abaixo (esconder os rótulos no mobile, mantendo "Etapa 1 de 3" em texto).
+4. ETAPAS (uma coluna, campos de largura total, 20px entre campos; labels sempre em UMA linha — encurtar visualmente com "Responsável legal" no label e o complemento "dirigente máximo" como texto de ajuda abaixo, sem alterar o texto original do site se ele for exigido por outra tela):
+   - Etapa 1 "Conta": Nome da ONG, CNPJ (máscara 00.000.000/0001-00), E-mail, Senha (olho; ajuda "Mínimo de 8 caracteres" vira ✓ verde ao atingir), Repetir a senha (olho; ✓ quando igual).
+   - Etapa 2 "Organização": Área de atuação (select), Responsável legal / dirigente máximo, Cargo, depois Cidade e Estado lado a lado (60/40, alinhados pela base).
+   - Etapa 3 "Canal e confirmação": Canal público (select) e Endereço do canal empilhados, com a ajuda atual ("Usaremos este canal para confirmar que o cadastro é da própria ONG."); nota informativa com o texto atual sobre a chave PIX; os dois checkboxes como caixas customizadas de 22px com os textos atuais (Termos de Uso e Política de Privacidade como links Marine/600); botão primário de largura total "Criar conta gratuitamente".
+5. NAVEGAÇÃO: nas etapas 1 e 2, botão primário "Continuar" (largura total) e, a partir da 2, terciário "Voltar" acima dele ou à esquerda. Enter avança. Validar a etapa atual antes de avançar (obrigatório, formato de e-mail, CNPJ completo, senha ≥ 8 e confirmação igual) com erro embaixo do campo e foco no primeiro inválido. Troca de etapa com transição de deslizar 200ms (sem animação com prefers-reduced-motion). Todos os campos ficam no formulário o tempo todo (as etapas só escondem/mostram), para o envio ser idêntico ao de hoje.
+6. ERROS DO SERVIDOR: nota vermelha no topo do painel com as mensagens; abrir automaticamente a etapa do primeiro campo com erro, e manter os valores digitados.
+7. Rodapé do painel: "Já tem uma conta? Entrar" (link Marine/600). "← Voltar ao site" no canto superior direito da tela.
+8. Sem JavaScript: mostrar as 3 etapas empilhadas, em ordem, com um único botão de envio no final.
+
+MOBILE: igual ao login (lado esquerdo oculto, logo acima do painel); campos de 48px; botões de largura total.
+ENTREGA: diff + arquivos alterados. Informe se alguma validação de máscara/CNPJ já existente precisou ser mantida.
+
+
+================================================================================
+PROMPT 9 — ADMIN (admin/: visão geral e subpáginas)
+================================================================================
+
+Pré-requisito: Prompt 0 aplicado. Não altere lógica, autenticação, logs, regras de aprovação nem names/CSRF. Só marcação e visual. Há subpáginas que eu não mostrei (Pendentes, Aprovadas, Recusadas, Suspensas, Logs e a tela de análise de uma ONG): leia cada arquivo e aplique os mesmos padrões abaixo.
+
+PRINCÍPIO: o admin é ferramenta de trabalho. Menos decoração, mais clareza e velocidade. Manchas de luz 50% mais fracas; vidro 1 com branco a 70%.
+
+CASCA (manter a estrutura): sidebar Harbor de 280px com logo, "Equipe de verificação", itens Visão geral · Pendentes · Aprovadas · Recusadas · Suspensas · Logs e, na base, "Ver o site" e "Sair". Item ativo: pílula Glacier a 35% com texto branco. Barra superior transparente: título + subtítulo à esquerda; à direita, selo "Equipe ONGHelp" e botão secundário "Sair".
+
+VISÃO GERAL
+1. Quatro KPIs em painéis de vidro 1 de 88px (aqui são 4 painéis, não faixa): ícone redondo de 44px na cor do status + número 28/700 + rótulo 14px. Cada painel é link para a subpágina do status. O de Pendentes tem borda âmbar de 1px quando o número é maior que zero.
+2. Grade: "Fila de verificação" nas colunas 1–8; coluna direita (9–12) com "Logs recentes" e "Lembrete".
+3. Fila de verificação (vidro 1): cabeçalho com título, descrição atual, contador em pílula; campo de busca com botão "Buscar" integrado (como hoje). Tabela com colunas ONG (nome 15/600 + CNPJ 13px abaixo) · LOCAL (cidade · UF + causa com bolinha) · STATUS · CADASTRO (data + "N dias em análise" para pendentes) · AÇÃO.
+   - Status como selo suave: Pendente (âmbar), Aprovada (verde), Recusada (vermelho), Suspensa (cinza).
+   - ONGs pendentes sempre no topo da lista, com barra lateral esquerda de 3px âmbar; "N dias em análise" em âmbar/600 quando ≥ 2 dias.
+   - Ação: nas pendentes, botão primário pequeno "Analisar"; nas demais, secundário de contorno "Analisar".
+4. Logs recentes: linha do tempo vertical (ponto de 10px Marine, linha de 1px entre pontos): ação 14/600, quem e quando 13px; terciário "Ver todos →".
+5. Lembrete: nota informativa padrão (sem cor creme), texto atual.
+
+SUBPÁGINAS DE STATUS: mesmo cabeçalho de página + a mesma tabela já filtrada; estado vazio específico (ex.: "Nenhuma ONG pendente — tudo em dia").
+LOGS: lista em linha do tempo com data agrupada por dia (rótulo do dia 12px caixa-alta) e filtros que já existirem como campos no topo.
+ANÁLISE DE UMA ONG: duas colunas. Esquerda (colunas 1–8): painéis com os dados da ONG organizados em seções (Identificação, Responsável, Localização, Canal público, PIX), cada campo como rótulo/valor com botão de copiar nos identificadores (CNPJ, e-mail, canal) e links externos abrindo em nova aba. Direita (colunas 9–12): painel de decisão "sticky" com a lista de verificações bloqueantes (checkbox de 22px), barra de progresso "5 de 7 verificações", campo de motivo, e botões: primário "Aprovar" (desabilitado até todas as verificações), secundário "Suspender", e botão de contorno vermelho "Recusar" (exige motivo). Mensagem curta embaixo repetindo a regra do Lembrete.
+
+MOBILE: sidebar vira menu recolhível (ícone de hambúrguer na barra superior); tabelas em blocos de duas camadas.
+ENTREGA: diff + arquivos alterados. Liste dados de teste visivelmente inválidos que notar (ex.: local ";;;;;;,00" na ONG de teste) sem alterá-los.
+
+
+================================================================================
+FIM
+================================================================================

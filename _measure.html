@@ -1,0 +1,15 @@
+<!doctype html>
+<html><body>
+<iframe id="f" src="/pages/transparencia.php" style="width:1440px;height:3000px;border:0"></iframe>
+<pre id="out">waiting</pre>
+<script>
+document.getElementById('f').addEventListener('load', function () {
+  var doc = this.contentDocument;
+  var cards = [].map.call(doc.querySelectorAll('.ong-transp-card'), function (el) {
+    var r = el.getBoundingClientRect();
+    return { text: el.innerText.slice(0, 30).replace(/\n/g, ' | '), top: Math.round(r.top), left: Math.round(r.left), w: Math.round(r.width), h: Math.round(r.height) };
+  });
+  document.getElementById('out').textContent = JSON.stringify({ cards: cards, scrollWidth: doc.documentElement.scrollWidth, clientWidth: doc.documentElement.clientWidth }, null, 2);
+});
+</script>
+</body></html>

@@ -1,0 +1,7 @@
+# Fotos enviadas pelas ONGs.
+# Esta pasta guarda apenas imagens: nenhum script deve ser executado aqui.
+Options -Indexes
+
+<FilesMatch "\.(php|phtml|phar|cgi|pl|py|sh|exe|bat|cmd)$">
+  Require all denied
+</FilesMatch>
