@@ -92,13 +92,6 @@ projetos, notícias e movimentações mensais de 2025 a 2026. Todas usam a senha
 
 O painel da Equipe ONGHelp fica em `/admin/`:
 
-| Conta | E-mail | Senha de demonstração | Papel |
-|---|---|---|---|
-| Equipe ONGHelp | `equipe.onghelp@gmail.com` | `EquipeONGHelp@2026` | Administrador |
-| Sir Pipoca | `pipoca@moderacao.onghelp.test` | `Moderador@2026` | Moderador (teste) |
-| Dona Tapioca | `tapioca@moderacao.onghelp.test` | `Moderador@2026` | Moderador (teste) |
-| Capitão Cuscuz | `cuscuz@moderacao.onghelp.test` | `Moderador@2026` | Moderador (teste) |
-
 A conta **Equipe ONGHelp** é única e compartilhada por até três pessoas de
 confiança; ela não pode ser desativada nem ter o papel alterado. As três contas
 de moderação são fictícias (`conta_teste = 1`) e existem só para demonstrar a
