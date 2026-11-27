@@ -1,0 +1,43 @@
+# ============================================================
+# ONGHelp — regras do Apache (valem para o projeto inteiro)
+# ============================================================
+# Só existem dois .htaccess: este e o de uploads/, que impede a
+# execução de arquivos enviados pelas ONGs.
+
+# Sem listagem de pastas e sem a versão do Apache nas páginas de erro.
+Options -Indexes
+ServerSignature Off
+
+# Pastas internas, que só o PHP lê: o navegador recebe 403.
+RedirectMatch 403 /(config|database|docs|includes|tests)(/|$)
+
+# Qualquer caminho com parte oculta (.git, .env, .htaccess...).
+RedirectMatch 403 /\.
+
+# Documentação, banco, logs e backups soltos também nunca são servidos.
+<FilesMatch "(?i)\.(md|sql|log|bak|old|ini|sh|txt|docx?)$">
+    Require all denied
+</FilesMatch>
+
+# assets/ só tem arquivos estáticos: nenhum script roda ali.
+RedirectMatch 403 /assets/.*\.(php|phtml|phar)$
+
+<IfModule mod_headers.c>
+    # Impede o navegador de "adivinhar" o tipo de um arquivo.
+    Header set X-Content-Type-Options "nosniff"
+
+    # Cache: CSS e JS são carregados por asset(), que põe ?v=<data>
+    # na URL; quando o arquivo muda, a URL muda. Por isso podem ficar
+    # um ano em cache. Imagens e fontes: 30 dias.
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(png|jpe?g|webp|svg|ico|woff2?)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
+
+# Compressão de CSS e JS (quando o mod_deflate estiver ativo).
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/css application/javascript text/javascript image/svg+xml
+</IfModule>

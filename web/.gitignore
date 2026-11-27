@@ -1,0 +1,18 @@
+# Envios das ONGs ficam fora do Git (só as pastas vazias vão)
+uploads/perfis/*
+!uploads/perfis/.gitkeep
+uploads/noticias/*
+!uploads/noticias/.gitkeep
+uploads/comprovantes/*
+!uploads/comprovantes/.gitkeep
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Logs e temporários
+*.log
+*.tmp

@@ -1,0 +1,666 @@
+<?xml version="1.0"?>
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram id="pag1" name="1. Vis&#xE3;o geral">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="1300" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="ONGHelp &#x2014; vis&#xE3;o geral do sistema" style="text;html=1;fontSize=22;fontStyle=1;fontColor=#030f18;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="900" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="Quem usa, por onde entra e onde cada informa&#xE7;&#xE3;o &#xE9; guardada. PHP 8.2 puro + MySQL/MariaDB no XAMPP, sem framework, sem CDN e funcionando sem JavaScript." style="text;html=1;fontSize=13;fontColor=#1d4052;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="58" width="1100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="Site p&#xFA;blico (index.php e pages/)" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#dbe9f1;swimlaneFillColor=#f4f8fa;strokeColor=#446e87;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="230" y="120" width="560" height="344" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4" value="&lt;b&gt;Home&lt;/b&gt;: n&#xFA;meros reais e ONGs em destaque" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n3">
+          <mxGeometry x="12" y="46" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5" value="&lt;b&gt;Lista de ONGs&lt;/b&gt;: filtros, ordena&#xE7;&#xE3;o e pagina&#xE7;&#xE3;o" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n3">
+          <mxGeometry x="12" y="88" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n6" value="&lt;b&gt;Perfil p&#xFA;blico&lt;/b&gt;: projetos, movimenta&#xE7;&#xF5;es, not&#xED;cias e doa&#xE7;&#xE3;o" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n3">
+          <mxGeometry x="12" y="130" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n7" value="&lt;b&gt;Portal de Transpar&#xEA;ncia&lt;/b&gt;: gr&#xE1;fico, balancete, categorias, CSV e PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n3">
+          <mxGeometry x="12" y="172" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n8" value="&lt;b&gt;Doa&#xE7;&#xE3;o via PIX&lt;/b&gt;: QR Code est&#xE1;tico do CNPJ verificado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n3">
+          <mxGeometry x="12" y="214" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n9" value="&lt;b&gt;Not&#xED;cias&lt;/b&gt;: busca, leitura e den&#xFA;ncia an&#xF4;nima" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n3">
+          <mxGeometry x="12" y="256" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n10" value="Legisla&#xE7;&#xE3;o &#xB7; Fale conosco &#xB7; Termos &#xB7; Privacidade &#xB7; Fa&#xE7;a parte da equipe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n3">
+          <mxGeometry x="12" y="298" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n11" value="&#xC1;rea da ONG (pages/, s&#xF3; status aprovada)" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#d6f5eb;swimlaneFillColor=#f3fbf8;strokeColor=#007a55;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="230" y="540" width="560" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="n12" value="&lt;b&gt;Cadastro&lt;/b&gt; (nasce pendente) e &lt;b&gt;login&lt;/b&gt; com limite de tentativas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n11">
+          <mxGeometry x="12" y="46" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n13" value="&lt;b&gt;Meu perfil&lt;/b&gt;: dados, foto, cor do banner, senha, relat&#xF3;rios" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n11">
+          <mxGeometry x="12" y="88" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n14" value="&lt;b&gt;Gest&#xE3;o&lt;/b&gt;: receitas, despesas, projetos e comprovantes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n11">
+          <mxGeometry x="12" y="130" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n15" value="&lt;b&gt;Minhas not&#xED;cias&lt;/b&gt; e editor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n11">
+          <mxGeometry x="12" y="172" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n16" value="&lt;b&gt;Notifica&#xE7;&#xF5;es&lt;/b&gt; (sino) &#xB7; &lt;b&gt;Excluir conta&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n11">
+          <mxGeometry x="12" y="214" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n17" value="Painel da equipe (/admin, sess&#xE3;o separada)" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#fff3d6;swimlaneFillColor=#fffaf0;strokeColor=#a66a00;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="230" y="860" width="560" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="n18" value="&lt;b&gt;Login individual&lt;/b&gt; e primeiro acesso de moderador" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n17">
+          <mxGeometry x="12" y="46" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n19" value="&lt;b&gt;Vis&#xE3;o geral&lt;/b&gt; e &lt;b&gt;an&#xE1;lise do cadastro&lt;/b&gt; (checklist com 11 obrigat&#xF3;rios)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n17">
+          <mxGeometry x="12" y="88" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n20" value="&lt;b&gt;Not&#xED;cias&lt;/b&gt;: den&#xFA;ncias, ocultar, restaurar, bloquear publica&#xE7;&#xF5;es" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n17">
+          <mxGeometry x="12" y="130" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n21" value="&lt;b&gt;Avisos &#xE0;s ONGs&lt;/b&gt; e &lt;b&gt;Equipe&lt;/b&gt; (s&#xF3; administrador)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n17">
+          <mxGeometry x="12" y="172" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n22" value="&lt;b&gt;Logs&lt;/b&gt; de auditoria e &lt;b&gt;Minha conta&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n17">
+          <mxGeometry x="12" y="214" width="536" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n23" value="Visitante / doador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#1d4052;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="70" y="250" width="40" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n24" value="ONG" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#1d4052;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="70" y="640" width="40" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n25" value="Equipe ONGHelp&lt;br&gt;(administrador e&lt;br&gt;moderadores)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#1d4052;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="70" y="960" width="40" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e26" value="navega sem cadastro" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n23" target="n3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e27" value="e-mail e senha" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n24" target="n11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e28" value="login da equipe" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n25" target="n17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e29" value="publica contas,&lt;br&gt;projetos e not&#xED;cias" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="n11" target="n3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e30" value="aprova, suspende,&lt;br&gt;avisos no sino" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="n17" target="n11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e31" value="den&#xFA;ncias de not&#xED;cias" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#c0392b;fontSize=11;fontColor=#8e2a20;labelBackgroundColor=#ffffff;exitX=1;exitY=0.8;entryX=1;entryY=0.3;" edge="1" parent="1" source="n3" target="n17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n32" value="N&#xFA;cleo compartilhado (includes/)" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#e0e8e6;swimlaneFillColor=#f7f9f9;strokeColor=#1d4052;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="930" y="120" width="380" height="306" as="geometry"/>
+        </mxCell>
+        <mxCell id="n33" value="&lt;b&gt;bootstrap.php&lt;/b&gt;: config, caminhos, headers de seguran&#xE7;a, sess&#xE3;o, CSRF, fun&#xE7;&#xF5;es e $pdo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n32">
+          <mxGeometry x="12" y="46" width="356" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="n34" value="&lt;b&gt;modules/&lt;/b&gt;: gest&#xE3;o, not&#xED;cias, fotos, notifica&#xE7;&#xF5;es, permiss&#xF5;es, PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n32">
+          <mxGeometry x="12" y="110" width="356" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="n35" value="&lt;b&gt;components/ e layout/&lt;/b&gt;: cabe&#xE7;alho, rodap&#xE9;, modais, cards" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n32">
+          <mxGeometry x="12" y="174" width="356" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="n36" value="&lt;b&gt;assets/&lt;/b&gt;: CSS (base, site, not&#xED;cias, admin), JS opcional e bibliotecas locais" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n32">
+          <mxGeometry x="12" y="238" width="356" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="e37" value="toda p&#xE1;gina come&#xE7;a&lt;br&gt;por bootstrap.php" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=1;exitY=0.25;entryX=0;entryY=0.3;" edge="1" parent="1" source="n3" target="n32">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;entryX=0;entryY=0.6;" edge="1" parent="1" source="n11" target="n32">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=1;exitY=0.15;entryX=0;entryY=0.9;" edge="1" parent="1" source="n17" target="n32">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n40" value="Banco onghelp (MySQL / MariaDB)" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#e0e8e6;swimlaneFillColor=#f7f9f9;strokeColor=#1d4052;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="120" width="300" height="512" as="geometry"/>
+        </mxCell>
+        <mxCell id="n41" value="usuarios (ONGs e status)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="46" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n42" value="movimentacoes" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="88" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n43" value="projetos" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="130" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n44" value="noticias &#xB7; fotos &#xB7; links" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="172" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n45" value="denuncias &#xB7; bloqueios" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="214" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n46" value="notificacoes" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="256" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n47" value="avisos_equipe" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="298" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n48" value="admins" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="340" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n49" value="verificacoes (checklist)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="382" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n50" value="logs_admin" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="424" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n51" value="tentativas_login" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="n40">
+          <mxGeometry x="12" y="466" width="276" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="e52" value="PDO, consultas&lt;br&gt;preparadas" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n32" target="n40">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n53" value="&lt;b&gt;uploads/&lt;/b&gt;&lt;br&gt;perfis/ &#xB7; noticias/ &#xB7; comprovantes/&lt;br&gt;nome aleat&#xF3;rio, sem metadados, sem execu&#xE7;&#xE3;o" style="shape=folder;whiteSpace=wrap;html=1;tabWidth=40;tabHeight=12;tabPosition=left;fillColor=#fff3d6;strokeColor=#a66a00;fontColor=#030f18;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="640" width="300" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="e54" value="fotos e comprovantes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=0.75;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="n32" target="n53">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n55" value="&lt;b&gt;Regras que valem em todo o sistema&lt;/b&gt;&lt;br&gt;&#x2022; S&#xF3; ONG com status &lt;i&gt;aprovada&lt;/i&gt; aparece no site e entra na &#xE1;rea da ONG.&lt;br&gt;&#x2022; Toda sa&#xED;da passa por e()/htmlspecialchars, toda consulta &#xE9; preparada (PDO).&lt;br&gt;&#x2022; Todo formul&#xE1;rio tem token CSRF; logout s&#xF3; por POST.&lt;br&gt;&#x2022; Toda a&#xE7;&#xE3;o da equipe vira log (quem, quando, IP).&lt;br&gt;&#x2022; Doa&#xE7;&#xE3;o &#xE9; divulga&#xE7;&#xE3;o: o PIX vai direto para a conta da ONG, o ONGHelp n&#xE3;o toca no dinheiro.&lt;br&gt;&#x2022; Apagar a ONG apaga movimenta&#xE7;&#xF5;es, projetos, not&#xED;cias e notifica&#xE7;&#xF5;es (CASCADE) e os arquivos dela." style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="930" y="800" width="770" height="150" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pag2" name="2. Ciclo de vida da ONG">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="900" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="Ciclo de vida do cadastro de uma ONG" style="text;html=1;fontSize=22;fontStyle=1;fontColor=#030f18;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="900" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="Coluna usuarios.status. Cada decis&#xE3;o da equipe grava um log (logs_admin), o checklist (verificacoes) e um aviso no sino da ONG (notificacoes). O servidor confere o status atual antes de cada transi&#xE7;&#xE3;o." style="text;html=1;fontSize=13;fontColor=#1d4052;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="58" width="1300" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="" style="ellipse;html=1;fillColor=#030f18;strokeColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="40" y="215" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4" value="&lt;b&gt;pages/cadastro.php&lt;/b&gt;&lt;br&gt;dados da ONG, respons&#xE1;vel legal,&lt;br&gt;canal p&#xFA;blico, PIX = CNPJ, senha forte" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="110" y="175" width="240" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5" value="pendente&lt;br&gt;&lt;span style=&quot;font-weight:normal;font-size:11px&quot;&gt;fora do site; o login avisa que est&#xE1; em an&#xE1;lise&lt;/span&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fff3d6;strokeColor=#a66a00;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="185" width="240" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n6" value="aprovada&lt;br&gt;&lt;span style=&quot;font-weight:normal;font-size:11px&quot;&gt;perfil p&#xFA;blico + selo &amp;quot;Verificada&amp;quot;&lt;/span&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#d6f5eb;strokeColor=#007a55;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="185" width="280" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n7" value="recusada&lt;br&gt;&lt;span style=&quot;font-weight:normal;font-size:11px&quot;&gt;o login pede para falar com a equipe&lt;/span&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fde8e8;strokeColor=#c0392b;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="470" width="240" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n8" value="suspensa&lt;br&gt;&lt;span style=&quot;font-weight:normal;font-size:11px&quot;&gt;sai do ar na hora e a sess&#xE3;o perde o acesso&lt;/span&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fff3d6;strokeColor=#a66a00;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="470" width="280" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n9" value="" style="ellipse;html=1;shape=doubleEllipse;fillColor=#030f18;strokeColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="213" width="34" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="n10" value="&lt;b&gt;conta exclu&#xED;da&lt;/b&gt;&lt;br&gt;CASCADE + arquivos do disco" style="text;html=1;fontSize=13;fontColor=#1d4052;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="255" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" value="INSERT&lt;br&gt;status = pendente" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n4" target="n5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13" value="aprovar&lt;br&gt;(11 itens obrigat&#xF3;rios,&lt;br&gt;conferidos de novo no servidor)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;" edge="1" parent="1" source="n5" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14" value="recusar&lt;br&gt;(motivo obrigat&#xF3;rio)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#c0392b;fontSize=11;fontColor=#8e2a20;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n5" target="n7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e15" value="aprovar ap&#xF3;s corre&#xE7;&#xE3;o&lt;br&gt;(checklist completo)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;exitX=1;exitY=0.25;entryX=0;entryY=0.85;" edge="1" parent="1" source="n7" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e16" value="suspender&lt;br&gt;(motivo)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#c0392b;fontSize=11;fontColor=#8e2a20;labelBackgroundColor=#ffffff;exitX=0.4;exitY=1;entryX=0.2;entryY=0;" edge="1" parent="1" source="n6" target="n8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e17" value="reativar&lt;br&gt;(nova verifica&#xE7;&#xE3;o)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;exitX=0.8;exitY=0;entryX=0.95;entryY=1;" edge="1" parent="1" source="n8" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e18" value="aprovar de novo = reverifica&#xE7;&#xE3;o" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;exitX=0.3;exitY=0;entryX=0.7;entryY=0;" edge="1" parent="1" source="n6" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e19" value="a ONG exclui a conta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n6" target="n9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n20" value="&lt;b&gt;O que cada estado permite&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;pendente&lt;/b&gt;: n&#xE3;o entra na &#xE1;rea da ONG e n&#xE3;o aparece em nenhuma lista nem busca.&lt;br&gt;&lt;b&gt;aprovada&lt;/b&gt;: entra, lan&#xE7;a contas, publica not&#xED;cias, recebe avisos; aparece no site com a data da &#xFA;ltima verifica&#xE7;&#xE3;o.&lt;br&gt;&lt;b&gt;recusada&lt;/b&gt;: n&#xE3;o entra; o login pede para falar com a equipe, e o motivo fica no hist&#xF3;rico da an&#xE1;lise.&lt;br&gt;&lt;b&gt;suspensa&lt;/b&gt;: perde o acesso na pr&#xF3;xima p&#xE1;gina (o status &#xE9; revalidado a cada requisi&#xE7;&#xE3;o) e some do site; os dados ficam guardados." style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="30" y="640" width="640" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="n21" value="&lt;b&gt;Transi&#xE7;&#xF5;es aceitas pelo servidor (admin/acao.php)&lt;/b&gt;&lt;br&gt;&#x2022; suspender: s&#xF3; de &lt;i&gt;aprovada&lt;/i&gt;&lt;br&gt;&#x2022; reativar: s&#xF3; de &lt;i&gt;suspensa&lt;/i&gt;&lt;br&gt;&#x2022; recusar: de &lt;i&gt;pendente&lt;/i&gt;, &lt;i&gt;recusada&lt;/i&gt; ou &lt;i&gt;suspensa&lt;/i&gt; (aprovada se suspende)&lt;br&gt;&#x2022; aprovar: de qualquer estado, sempre com o checklist completo&lt;br&gt;&lt;br&gt;&lt;b&gt;Corre&#xE7;&#xF5;es sem mudar o status&lt;/b&gt;: chave PIX (sempre o CNPJ), respons&#xE1;vel legal, e-mail de aprova&#xE7;&#xE3;o enviado." style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="720" y="640" width="620" height="170" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pag3" name="3. Caminho de uma requisi&#xE7;&#xE3;o">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="O caminho de uma requisi&#xE7;&#xE3;o" style="text;html=1;fontSize=22;fontStyle=1;fontColor=#030f18;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="900" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="Do navegador at&#xE9; o HTML. O mesmo caminho vale para pages/, admin/ e pages/actions/ (endpoints sem tela)." style="text;html=1;fontSize=13;fontColor=#1d4052;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="58" width="1100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="Navegador" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1d4052;strokeColor=#030f18;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4" value="&lt;b&gt;Apache + .htaccess&lt;/b&gt;&lt;br&gt;bloqueia config/, includes/, database/, docs/, tests/, ocultos e scripts em assets/ e uploads/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="140" width="260" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5" value="&lt;b&gt;P&#xE1;gina de entrada&lt;/b&gt;&lt;br&gt;index.php &#xB7; pages/*.php &#xB7; admin/*.php &#xB7; pages/actions/*.php" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="150" width="260" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n6" value="includes/bootstrap.php (sempre, nesta ordem)" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#e0e8e6;swimlaneFillColor=#f7f9f9;strokeColor=#1d4052;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="600" y="290" width="360" height="402" as="geometry"/>
+        </mxCell>
+        <mxCell id="n7" value="fuso America/Sao_Paulo &#xB7; gzip do HTML" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n6">
+          <mxGeometry x="12" y="46" width="336" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n8" value="descarta listas inesperadas em $_GET/$_POST" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n6">
+          <mxGeometry x="12" y="90" width="336" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n9" value="config/app.php (&#xE1;reas, categorias, limites)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n6">
+          <mxGeometry x="12" y="134" width="336" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n10" value="core/paths.php: url() e asset() com ?v=" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n6">
+          <mxGeometry x="12" y="178" width="336" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n11" value="core/security-headers.php: CSP, X-Frame-Options, nosniff" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n6">
+          <mxGeometry x="12" y="222" width="336" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n12" value="core/session.php: cookie httponly/samesite, expira&#xE7;&#xE3;o, id renovado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n6">
+          <mxGeometry x="12" y="266" width="336" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n13" value="core/csrf.php &#xB7; core/helpers.php &#xB7; core/senha.php" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n6">
+          <mxGeometry x="12" y="310" width="336" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n14" value="core/database.php: $pdo (erro gen&#xE9;rico na tela, detalhe no log)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n6">
+          <mxGeometry x="12" y="354" width="336" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n15" value="GET ou POST?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#a66a00;fontColor=#030f18;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="330" width="140" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n16" value="POST (formul&#xE1;rios)" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#fff3d6;swimlaneFillColor=#fffaf0;strokeColor=#a66a00;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="140" width="380" height="338" as="geometry"/>
+        </mxCell>
+        <mxCell id="n17" value="csrfExigir(): token inv&#xE1;lido &#x2192; recusa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n16">
+          <mxGeometry x="12" y="46" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n18" value="exigir login / permiss&#xE3;o (ONG ou equipe)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n16">
+          <mxGeometry x="12" y="94" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n19" value="conferir dono do registro (uma ONG n&#xE3;o mexe na outra)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n16">
+          <mxGeometry x="12" y="142" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n20" value="validar campos e arquivos no servidor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n16">
+          <mxGeometry x="12" y="190" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n21" value="gravar com PDO + log/notifica&#xE7;&#xE3;o quando &#xE9; da equipe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n16">
+          <mxGeometry x="12" y="238" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n22" value="flash + redirect (Post/Redirect/Get)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n16">
+          <mxGeometry x="12" y="286" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n23" value="GET (telas)" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#d6f5eb;swimlaneFillColor=#f3fbf8;strokeColor=#007a55;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="540" width="380" height="338" as="geometry"/>
+        </mxCell>
+        <mxCell id="n24" value="ler filtros/abas da URL (sem JS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n23">
+          <mxGeometry x="12" y="46" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n25" value="consultar s&#xF3; ONGs aprovadas no p&#xFA;blico" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n23">
+          <mxGeometry x="12" y="94" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n26" value="m&#xF3;dulos sob demanda (gestao, noticias, pdf&#x2026;)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n23">
+          <mxGeometry x="12" y="142" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n27" value="layout/header.php + head-assets.php (CSS da &#xE1;rea)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n23">
+          <mxGeometry x="12" y="190" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n28" value="HTML com e() em toda sa&#xED;da" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n23">
+          <mxGeometry x="12" y="238" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n29" value="layout/footer.php + scripts.php ($page_scripts)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n23">
+          <mxGeometry x="12" y="286" width="356" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="n30" value="Resposta: HTML, CSV ou PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1d4052;strokeColor=#030f18;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="960" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e31" value="HTTP" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e32" value="arquivo permitido" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n4" target="n5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e33" value="require_once" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n5" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n6" target="n15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e35" value="POST" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n15" target="n16">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e36" value="GET" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="n15" target="n23">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e37" value="303 Location (volta como GET)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" edge="1" parent="1" source="n16" target="n3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n23" target="n30">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="n30" target="n3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n40" value="&lt;b&gt;JavaScript &#xE9; s&#xF3; melhoria&lt;/b&gt;&lt;br&gt;core/ui.js (comportamentos por data-*), senha.js (lista de requisitos), doacao.js (QR Code), editores e pr&#xE9;vias. Sem JS, abas, filtros, perguntas (details) e formul&#xE1;rios continuam funcionando." style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="640" width="480" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="n41" value="&lt;b&gt;Endpoints sem tela (pages/actions/)&lt;/b&gt;&lt;br&gt;exportar-csv.php &#x2192; CSV com c&#xE9;lulas anti-f&#xF3;rmula&lt;br&gt;relatorio-anual.php &#x2192; PDF escrito &#xE0; m&#xE3;o (modules/pdf.php)&lt;br&gt;denunciar-noticia.php &#x2192; den&#xFA;ncia an&#xF4;nima com limite&lt;br&gt;logout.php &#x2192; s&#xF3; POST com CSRF" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="780" width="480" height="120" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pag4" name="4. Dinheiro e transpar&#xEA;ncia">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="1000" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="Do PIX &#xE0; presta&#xE7;&#xE3;o de contas" style="text;html=1;fontSize=22;fontStyle=1;fontColor=#030f18;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="900" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="O ONGHelp n&#xE3;o recebe, guarda nem confere pagamentos. Ele divulga a chave verificada e publica o que a ONG lan&#xE7;a." style="text;html=1;fontSize=13;fontColor=#1d4052;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="58" width="1100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="Doador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#1d4052;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="40" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4" value="&lt;b&gt;Modal de doa&#xE7;&#xE3;o&lt;/b&gt;&lt;br&gt;BR Code est&#xE1;tico (sem valor) gerado do CNPJ verificado + chave copi&#xE1;vel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="200" y="150" width="260" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5" value="App do banco do doador" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1d4052;strokeColor=#030f18;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="165" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n6" value="Conta da ONG (CNPJ)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1d4052;strokeColor=#030f18;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="165" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n7" value="ONG" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#1d4052;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="170" width="40" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="abre no perfil" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="l&#xEA; o QR / cola a chave" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n4" target="n5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="PIX direto" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n5" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="v&#xEA; o cr&#xE9;dito" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n6" target="n7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n12" value="pages/gestao.php &#x2014; lan&#xE7;ar e editar" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#d6f5eb;swimlaneFillColor=#f3fbf8;strokeColor=#007a55;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="290" width="380" height="310" as="geometry"/>
+        </mxCell>
+        <mxCell id="n13" value="tipo receita ou despesa (valor sempre positivo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n12">
+          <mxGeometry x="12" y="46" width="356" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n14" value="categoria (6 de receita, 8 de despesa, conferida no servidor)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n12">
+          <mxGeometry x="12" y="98" width="356" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n15" value="projeto ligado (s&#xF3; da pr&#xF3;pria ONG)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n12">
+          <mxGeometry x="12" y="150" width="356" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n16" value="comprovante PDF/JPG/PNG/WebP at&#xE9; 5 MB, tipo real conferido, nome aleat&#xF3;rio, sem GPS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n12">
+          <mxGeometry x="12" y="202" width="356" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="n17" value="projetos: situa&#xE7;&#xE3;o, per&#xED;odo, indicador e meta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="n12">
+          <mxGeometry x="12" y="254" width="356" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="e18" value="lan&#xE7;a como receita" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n7" target="n12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n19" value="&lt;b&gt;movimentacoes&lt;/b&gt; + &lt;b&gt;projetos&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="420" width="200" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="e20" value="INSERT / UPDATE" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n12" target="n19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n21" value="balanceteDoAno()&lt;br&gt;&lt;span style=&quot;font-weight:normal&quot;&gt;uma fonte &#xFA;nica para os n&#xFA;meros&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1d4052;strokeColor=#030f18;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="600" width="320" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n19" target="n21">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n23" value="Onde o p&#xFA;blico v&#xEA;" style="swimlane;rounded=1;arcSize=6;whiteSpace=wrap;html=1;startSize=34;fontStyle=1;fontSize=14;fillColor=#dbe9f1;swimlaneFillColor=#f4f8fa;strokeColor=#446e87;fontColor=#030f18;" vertex="1" parent="1">
+          <mxGeometry x="120" y="726" width="1180" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="n24" value="&lt;b&gt;Portal de Transpar&#xEA;ncia&lt;/b&gt;&lt;br&gt;gr&#xE1;fico mensal, para onde foi o dinheiro, balancete de 12 meses, comprovantes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="140" y="770" width="280" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n25" value="&lt;b&gt;Perfil p&#xFA;blico&lt;/b&gt;&lt;br&gt;projetos com meta e gasto por projeto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="450" y="770" width="250" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n26" value="&lt;b&gt;Relat&#xF3;rio anual em PDF&lt;/b&gt;&lt;br&gt;balancete, despesas por categoria, projetos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="730" y="770" width="270" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n27" value="&lt;b&gt;CSV&lt;/b&gt; por ano ou per&#xED;odo&lt;br&gt;abre no Excel, c&#xE9;lulas anti-f&#xF3;rmula" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="770" width="250" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n28" value="&lt;b&gt;Perfil privado&lt;/b&gt; (s&#xF3; a ONG)&lt;br&gt;mesmos totais e relat&#xF3;rios anuais" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="770" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="e29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;" edge="1" parent="1" source="n21" target="n24">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;" edge="1" parent="1" source="n21" target="n25">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;" edge="1" parent="1" source="n21" target="n26">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;" edge="1" parent="1" source="n21" target="n27">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;" edge="1" parent="1" source="n21" target="n28">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n34" value="Exporta&#xE7;&#xF5;es v&#xE3;o do mais antigo ao mais novo (presta&#xE7;&#xE3;o de contas); as telas mostram o mais recente primeiro." style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="120" y="880" width="520" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pag5" name="5. Not&#xED;cias e modera&#xE7;&#xE3;o">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="1050" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="Not&#xED;cias: publica&#xE7;&#xE3;o, den&#xFA;ncia e modera&#xE7;&#xE3;o" style="text;html=1;fontSize=22;fontStyle=1;fontColor=#030f18;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="900" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="noticias.estado e noticias_denuncias.estado. A modera&#xE7;&#xE3;o nunca apaga: texto, fotos e den&#xFA;ncias ficam guardados." style="text;html=1;fontSize=13;fontColor=#1d4052;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="58" width="1100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="&lt;b&gt;Editor&lt;/b&gt; (noticia-editar.php)&lt;br&gt;t&#xED;tulo 10&#x2013;90, resumo 30&#x2013;180, texto 100&#x2013;8.000, at&#xE9; 3 links e 10 fotos com descri&#xE7;&#xE3;o" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="280" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4" value="rascunho" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#446e87;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="200" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5" value="pode publicar?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#a66a00;fontColor=#030f18;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="180" width="170" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n6" value="publicada" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#d6f5eb;strokeColor=#007a55;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="200" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n7" value="oculta&lt;br&gt;&lt;span style=&quot;font-weight:normal;font-size:11px&quot;&gt;ONG v&#xEA; o motivo&lt;/span&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fde8e8;strokeColor=#c0392b;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="480" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="salvar" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="publicar" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n4" target="n5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="sim" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;" edge="1" parent="1" source="n5" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="n&#xE3;o: fica rascunho e o editor mostra o que falta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#c0392b;fontSize=11;fontColor=#8e2a20;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="n5" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" value="despublicar" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" edge="1" parent="1" source="n6" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n13" value="&lt;b&gt;Regras conferidas no servidor ao publicar&lt;/b&gt;&lt;br&gt;&#x2022; ONG aprovada e sem bloqueio de publica&#xE7;&#xF5;es&lt;br&gt;&#x2022; no m&#xE1;ximo 3 publica&#xE7;&#xF5;es por dia&lt;br&gt;&#x2022; texto sem chave PIX nem pedido de transfer&#xEA;ncia&lt;br&gt;&#x2022; fotos at&#xE9; 5 MB e 24 MP, sem metadados&lt;br&gt;&#x2022; sem foto pr&#xF3;pria: imagem ilustrativa da &#xE1;rea" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="620" y="320" width="300" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="n14" value="Visitante" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#1d4052;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="180" width="40" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n15" value="den&#xFA;ncia pendente" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fff3d6;strokeColor=#a66a00;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="330" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e16" value="denuncia (an&#xF4;nimo, com limite)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n14" target="n15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e17" value="not&#xED;cia no ar" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="n6" target="n15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n18" value="moderador&lt;br&gt;analisa" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#a66a00;fontColor=#030f18;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1285" y="470" width="170" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="e19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n15" target="n18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n20" value="improcedente&lt;br&gt;&lt;span style=&quot;font-weight:normal;font-size:11px&quot;&gt;not&#xED;cia continua&lt;/span&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#446e87;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="640" width="190" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n21" value="procedente" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fde8e8;strokeColor=#c0392b;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="640" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e22" value="improcedente" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n18" target="n20">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e23" value="procedente" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n18" target="n21">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e24" value="oculta + aviso no sino" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#c0392b;fontSize=11;fontColor=#8e2a20;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n21" target="n7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e25" value="ocultar direto&lt;br&gt;(motivo obrigat&#xF3;rio)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#c0392b;fontSize=11;fontColor=#8e2a20;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n6" target="n7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e26" value="restaurar" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;exitX=0;exitY=0.3;entryX=0;entryY=0.7;" edge="1" parent="1" source="n7" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n27" value="Bloquear publica&#xE7;&#xF5;es da ONG&lt;br&gt;&lt;span style=&quot;font-weight:normal&quot;&gt;noticias_bloqueios, com motivo; liberar depois&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1d4052;strokeColor=#030f18;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="800" width="340" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e28" value="casos repetidos" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="n21" target="n27">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n29" value="Toda a&#xE7;&#xE3;o de modera&#xE7;&#xE3;o grava em logs_admin (quem, quando, IP) e avisa a ONG no sino: not&#xED;cia ocultada/restaurada, publica&#xE7;&#xF5;es bloqueadas/liberadas." style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="640" width="440" height="80" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pag6" name="6. Equipe e avisos">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="1000" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="Contas da equipe e avisos &#xE0;s ONGs" style="text;html=1;fontSize=22;fontStyle=1;fontColor=#030f18;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="900" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="admins.estado e o caminho de um aviso do administrador at&#xE9; o sino de cada ONG." style="text;html=1;fontSize=13;fontColor=#1d4052;align=left;verticalAlign=top;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="58" width="1100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="Administrador&lt;br&gt;(conta &#xFA;nica)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#1d4052;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="40" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4" value="aguardando&lt;br&gt;&lt;span style=&quot;font-weight:normal;font-size:11px&quot;&gt;senha tempor&#xE1;ria (s&#xF3; o hash), vale 48 h&lt;/span&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fff3d6;strokeColor=#a66a00;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="160" width="240" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5" value="&lt;b&gt;primeiro-acesso.php&lt;/b&gt;&lt;br&gt;troca a senha (regras da equipe) e aceita as regras" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="165" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n6" value="ativo" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#d6f5eb;strokeColor=#007a55;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="175" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n7" value="desativado&lt;br&gt;&lt;span style=&quot;font-weight:normal;font-size:11px&quot;&gt;sess&#xF5;es invalidadas&lt;/span&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#fde8e8;strokeColor=#c0392b;strokeWidth=2;fontColor=#030f18;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="360" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="cria moderador" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="login" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n4" target="n5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;" edge="1" parent="1" source="n5" target="n6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="desativar" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#c0392b;fontSize=11;fontColor=#8e2a20;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n6" target="n7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" value="reativar (nova senha tempor&#xE1;ria)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#007a55;fontSize=11;fontColor=#00563c;labelBackgroundColor=#ffffff;strokeWidth=2;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="n7" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13" value="redefinir senha" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" edge="1" parent="1" source="n6" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n14" value="&lt;b&gt;Permiss&#xF5;es (permissoesPorPapel)&lt;/b&gt;&lt;br&gt;Administrador e moderador: painel, analisar ONG, moderar not&#xED;cias, ver logs, pr&#xF3;pria conta.&lt;br&gt;S&#xF3; administrador: gerenciar equipe e enviar avisos.&lt;br&gt;O administrador n&#xE3;o pode ser desativado nem trocar de papel; moderadores nunca s&#xE3;o exclu&#xED;dos pela interface. Acesso negado tamb&#xE9;m vira log." style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="150" width="460" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="n15" value="&lt;b&gt;admin/avisos.php&lt;/b&gt;&lt;br&gt;t&#xED;tulo, mensagem, destino (todas ou uma ONG aprovada) e p&#xE1;gina do bot&#xE3;o (lista fechada)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="560" width="300" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="n16" value="&lt;b&gt;avisos_equipe&lt;/b&gt;&lt;br&gt;1 linha por aviso" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="570" width="180" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n17" value="&lt;b&gt;notificacoes&lt;/b&gt;&lt;br&gt;1 c&#xF3;pia por ONG (aviso_id)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7;fillColor=#e0e8e6;strokeColor=#1d4052;fontColor=#030f18;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="900" y="570" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n18" value="&lt;b&gt;Sino da ONG&lt;/b&gt;&lt;br&gt;&quot;Abrir&quot; marca como lido e leva s&#xF3; a p&#xE1;gina interna" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#72a3bf;fontColor=#030f18;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="570" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="n19" value="Hist&#xF3;rico com quantas ONGs j&#xE1; leram" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1d4052;strokeColor=#030f18;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="740" width="460" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e20" value="escreve" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="n3" target="n15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e21" value="pr&#xE9;via &#x2192; enviar" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n15" target="n16">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e22" value="copia para cada destino" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n16" target="n17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#446e87;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n17" target="n18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e24" value="lido_em" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=open;dashed=1;strokeColor=#72a3bf;fontSize=11;fontColor=#1d4052;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n17" target="n19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="n25" value="Avisos autom&#xE1;ticos usam o mesmo sino: cadastro aprovado ou verificado de novo, suspenso ou reativado, PIX e respons&#xE1;vel ajustados, not&#xED;cia ocultada ou restaurada, publica&#xE7;&#xF5;es bloqueadas ou liberadas." style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fffbe6;strokeColor=#c9b458;fontColor=#3a3a3a;fontSize=11;align=left;spacingLeft=8;spacingRight=6;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="260" y="840" width="560" height="70" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

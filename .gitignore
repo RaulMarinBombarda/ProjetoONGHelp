@@ -1,0 +1,6 @@
+# sistema operacional e editores (as regras do site ficam em web/.gitignore)
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

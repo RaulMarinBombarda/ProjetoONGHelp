@@ -1,0 +1,24 @@
+# ============================================================
+# uploads/ — Arquivos enviados pelas ONGs (perfis, notícias e comprovantes)
+# ============================================================
+# Esta pasta só guarda imagens e os PDFs dos comprovantes: nada
+# pode ser listado ou executado aqui, inclusive nas subpastas.
+Options -Indexes
+
+<FilesMatch "(?i)\.(php|phtml|phar|php[0-9]?|cgi|pl|py|sh|asp|aspx|jsp|exe|bat|cmd)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "(?i)\.(md|txt|html?)$">
+    Require all denied
+</FilesMatch>
+
+RemoveHandler .php .phtml .phar .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .sh
+RemoveType .php .phtml .phar .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .sh
+
+# Fotos e comprovantes têm nome aleatório e nunca são sobrescritos.
+<IfModule mod_headers.c>
+    <FilesMatch "(?i)\.(png|jpe?g|webp)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>

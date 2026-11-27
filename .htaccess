@@ -1,0 +1,18 @@
+# ============================================================
+# ONGHelp, raiz do repositório
+# ============================================================
+# o site fica em web/, quem abrir a raiz vai direto para ele, e
+# as pastas back/ e mobile/ só guardam documentação
+
+Options -Indexes
+ServerSignature Off
+
+# a raiz leva para o site, qualquer que seja o nome da pasta
+RedirectMatch 302 ^(/[^/]+)/?$ $1/web/
+
+# caminhos ocultos (.git, .gitignore) nunca são servidos, o .git fica
+# aqui na raiz quando o repositório é clonado dentro do htdocs
+RedirectMatch 403 /\.
+
+# documentação das pastas da raiz não precisa ser aberta pelo navegador
+RedirectMatch 403 ^/[^/]+/(back|mobile)(/|$)
